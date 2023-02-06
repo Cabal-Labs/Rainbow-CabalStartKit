@@ -1,0 +1,43 @@
+.navbar{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4000000059604645);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 0px;
+    height: 5rem;
+    width: 100%;
+    padding: 0 2rem;
+}
+.logo{
+   width: 65px;
+    height: 65px;
+    cursor: pointer;
+}
+.outlinelightbtn {
+    width: fit-content;
+    display: flex;
+    padding: 15px 15px;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.outlinelightbtn:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.outlinelightbtn:active{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}

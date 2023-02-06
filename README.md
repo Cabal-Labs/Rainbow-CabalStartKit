@@ -1,5 +1,5 @@
 # Rainbow-Cabal Start Kit
-
+![Example](./example.png)
 A starting kit for using the Rainbow kit, a web3 button connector for different wallets, with Wagni, a React Hooks SDK for web3, built using Next.js.
 
 ## Getting Started

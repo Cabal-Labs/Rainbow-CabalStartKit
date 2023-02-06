@@ -18,14 +18,12 @@ Before you start, make sure you have the following tools installed:
 1. Clone the repo to your local machine using:
 ```
 git clone https://github.com/Cabal-Labs/rainbow-cabalkit.git
-
 ```
 
 2. Install the dependencies using npm:
 
 ```
 npm install
-
 ```
 3. Start the development server:
 

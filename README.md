@@ -40,14 +40,14 @@ The repo includes a couple of buttons that demonstrate how to set up both Rainbo
 
 We are implementing different React Hooks from Wagni:
 
-- useAccount
-- useBlockNumber
-- useBalance
-- useSignMessage
-- useEnsName
-- useSendTransaction 
+- [useAccount](https://github.com/Cabal-Labs/rainbow-cabalkit#accessing-the-users-web3-wallet-account)
+- [useBlockNumber](https://github.com/Cabal-Labs/rainbow-cabalkit#reading-the-latest-block-from-the-blockchain)
+- [useBalance]https://github.com/Cabal-Labs/rainbow-cabalkit#reading-the-users-wallet-balance
+- [useSignMessage](https://github.com/Cabal-Labs/rainbow-cabalkit#signing-messages)
+- [useEnsName](https://github.com/Cabal-Labs/rainbow-cabalkit#searching-for-the-ens-name-from-a-wallet-address)
+- [useSendTransaction](https://github.com/Cabal-Labs/rainbow-cabalkit#sending-blockchain-transactions)
 
-#### Accessing the user's Web3 wallet account
+### Accessing the user's Web3 wallet account
 To access information about the user's Web3 wallet account, you can use the `useAccount` hook from Wagni:
 
 ```
@@ -64,7 +64,7 @@ function App() {
   return <div>{address}</div>
 }
 ```
-#### Reading the latest block from the blockchain
+### Reading the latest block from the blockchain
 To read the latest block from the blockchain, you can use the `useBlockNumber` hook from Wagni:
 
 ```
@@ -83,7 +83,7 @@ function App() {
   return <div>Block number: {data}</div>
 }
 ```
-#### Reading the user's wallet balance
+### Reading the user's wallet balance
 To read the user's wallet balance, you can use the `useBalance` hook from Wagni:
 
 ```
@@ -106,7 +106,7 @@ function App() {
   )
 }
 ```
-#### Signing messages
+### Signing messages
 To sign messages, you can use the `useSignMessage` hook from Wagni:
 
 ```
@@ -131,7 +131,7 @@ function App() {
   )
 }
 ```
-#### Searching for the ENS name from a wallet address
+### Searching for the ENS name from a wallet address
 To search for the ENS name from a wallet address, you can use the `useEnsName` hook from Wagni:
 
 ```
@@ -150,7 +150,7 @@ function App() {
   return <div>Name: {data}</div>
 }
 ```
-#### Sending blockchain transactions
+### Sending blockchain transactions
 To send blockchain transactions, you can use the `useSendTransaction` hook from Wagni:
 
 ```

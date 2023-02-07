@@ -42,7 +42,7 @@ We are implementing different React Hooks from Wagni:
 
 - [useAccount](https://github.com/Cabal-Labs/rainbow-cabalkit#accessing-the-users-web3-wallet-account)
 - [useBlockNumber](https://github.com/Cabal-Labs/rainbow-cabalkit#reading-the-latest-block-from-the-blockchain)
-- [useBalance]https://github.com/Cabal-Labs/rainbow-cabalkit#reading-the-users-wallet-balance
+- [useBalance](https://github.com/Cabal-Labs/rainbow-cabalkit#reading-the-users-wallet-balance)
 - [useSignMessage](https://github.com/Cabal-Labs/rainbow-cabalkit#signing-messages)
 - [useEnsName](https://github.com/Cabal-Labs/rainbow-cabalkit#searching-for-the-ens-name-from-a-wallet-address)
 - [useSendTransaction](https://github.com/Cabal-Labs/rainbow-cabalkit#sending-blockchain-transactions)

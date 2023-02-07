@@ -1,10 +1,10 @@
 # Rainbow-Cabal Start Kit
 ![Example](./example.gif)
 
-A starting kit for using the Rainbow kit, a web3 button connector for different wallets, with Wagni, a React Hooks SDK for web3, built using Next.js. 
+A starting kit for using the Rainbow kit, a web3 button connector for different wallets, with Wagmi, a React Hooks SDK for web3, built using Next.js. 
 
 ## Getting Started
- In this guide, we'll show you how to set up the RainbowKit button and demonstrate how to use the different Ethereum React hooks from Wagni.
+ In this guide, we'll show you how to set up the RainbowKit button and demonstrate how to use the different Ethereum React hooks from Wagmi.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
@@ -20,27 +20,92 @@ You'll also need an Alchemmy API key. [Alchemy](https://www.alchemy.com/) API ke
 ### Installation
 
 1. Clone the repo to your local machine using:
-```
+```bash
 git clone https://github.com/Cabal-Labs/rainbow-cabalkit.git
 ```
 
 2. Install the dependencies using npm:
 
-```
+```bash
 npm install
 ```
 3. Go to [_app.js](https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/pages/_app.js) & insert your [Alchemy](https://www.alchemy.com/) key
 4. Start the development server:
 
-```
+```bash
 npm run dev
 ```
 
-### [Examples](https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/components/main.js)
+## [Examples](https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/components/main.js)
 
-The repo includes a couple of buttons that demonstrate how to set up both Rainbow kit and Wagni in a Next.js project. You can use these buttons as a starting point for your own implementation.
+The repo includes a couple of buttons that demonstrate how to set up both Rainbow kit and Wagmi in a Next.js project. You can use these buttons as a starting point for your own implementation.
 
-We are implementing different React Hooks from Wagni:
+## Rainbow Kit
+Set up Rainbow kit in your own project
+
+1. Install the following packages:
+
+```bash     
+npm install @rainbow-me/rainbowkit wagmi ethers
+```
+2. Import the configs into the root of your project:
+
+```js
+// Example from Rainbow kit (https://www.rainbowkit.com/docs/installation)
+// Our implementation is on https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/pages/_app.js
+ import '@rainbow-me/rainbowkit/styles.css';
+
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+} from '@rainbow-me/rainbowkit';
+import { configureChains, createClient, WagmiConfig } from 'wagmi';
+import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
+```
+3. Configure the chains and connectors in the same file:
+
+```js
+// Example from Rainbow kit (https://www.rainbowkit.com/docs/installation)
+// Our implementation is on https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/pages/_app.js
+
+const { chains, provider } = configureChains(
+  [mainnet, polygon, goerli],
+  [
+    alchemyProvider({ apiKey: "YOUR_ALCHEMY_KEY" }),
+    publicProvider()
+  ]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: 'My RainbowKit App',
+  chains
+});
+
+const wagmiClient = createClient({z
+  connectors,
+  provider
+})
+```
+4. Wrap your app in the RainbowKitProvider and Wagmi client:
+
+```js
+// Example from Rainbow kit (https://www.rainbowkit.com/docs/installation)
+// Our implementation is on https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/pages/_app.js
+
+const App = () => {
+  return (
+    <WagmiConfig client={wagmiClient}>
+      <RainbowKitProvider chains={chains}>
+        <YourApp />
+      </RainbowKitProvider>
+    </WagmiConfig>
+  );
+};
+```
+
+We are implementing different React Hooks from Wagmi:
 
 - [useAccount](https://github.com/Cabal-Labs/rainbow-cabalkit#accessing-the-users-web3-wallet-account)
 - [useBlockNumber](https://github.com/Cabal-Labs/rainbow-cabalkit#reading-the-latest-block-from-the-blockchain)
@@ -50,10 +115,10 @@ We are implementing different React Hooks from Wagni:
 - [useSendTransaction](https://github.com/Cabal-Labs/rainbow-cabalkit#sending-blockchain-transactions)
 
 ### Accessing the user's Web3 wallet account
-To access information about the user's Web3 wallet account, you can use the `useAccount` hook from Wagni:
+To access information about the user's Web3 wallet account, you can use the `useAccount` hook from Wagmi:
 
-```
-// Exmaple from Wagni (https://wagmi.sh/)
+```js
+// Exmaple from Wagmi (https://wagmi.sh/)
 // Our implementation is on https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/components/main.js
 
 import { useAccount } from 'wagmi'
@@ -67,10 +132,10 @@ function App() {
 }
 ```
 ### Reading the latest block from the blockchain
-To read the latest block from the blockchain, you can use the `useBlockNumber` hook from Wagni:
+To read the latest block from the blockchain, you can use the `useBlockNumber` hook from Wagmi:
 
-```
-// Exmaple from Wagni (https://wagmi.sh/)
+```js
+// Exmaple from Wagmi (https://wagmi.sh/)
 // Our implementation is on https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/components/main.js
 
 import { useAccount } from 'wagmi'
@@ -86,10 +151,10 @@ function App() {
 }
 ```
 ### Reading the user's wallet balance
-To read the user's wallet balance, you can use the `useBalance` hook from Wagni:
+To read the user's wallet balance, you can use the `useBalance` hook from Wagmi:
 
-```
-// Exmaple from Wagni (https://wagmi.sh/)
+```js
+// Exmaple from Wagmi (https://wagmi.sh/)
 // Our implementation is on https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/components/main.js
 
 import { useBalance } from 'wagmi'
@@ -109,10 +174,10 @@ function App() {
 }
 ```
 ### Signing messages
-To sign messages, you can use the `useSignMessage` hook from Wagni:
+To sign messages, you can use the `useSignMessage` hook from Wagmi:
 
-```
-// Exmaple from Wagni (https://wagmi.sh/)
+```js
+// Exmaple from Wagmi (https://wagmi.sh/)
 // Our implementation is on https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/components/main.js
 
 import { useSignMessage } from 'wagmi'
@@ -134,10 +199,10 @@ function App() {
 }
 ```
 ### Searching for the ENS name from a wallet address
-To search for the ENS name from a wallet address, you can use the `useEnsName` hook from Wagni:
+To search for the ENS name from a wallet address, you can use the `useEnsName` hook from Wagmi:
 
-```
-// Exmaple from Wagni (https://wagmi.sh/)
+```js
+// Exmaple from Wagmi (https://wagmi.sh/)
 // Our implementation is on https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/components/main.js
 
 import { useEnsName } from 'wagmi'
@@ -153,10 +218,10 @@ function App() {
 }
 ```
 ### Sending blockchain transactions
-To send blockchain transactions, you can use the `useSendTransaction` hook from Wagni:
+To send blockchain transactions, you can use the `useSendTransaction` hook from Wagmi:
 
-```
-// Exmaple from Wagni (https://wagmi.sh/)
+```js
+// Exmaple from Wagmi (https://wagmi.sh/)
 // Our implementation is on https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/components/main.js
 
 import { useSendTransaction, usePrepareSendTransaction } from 'wagmi'

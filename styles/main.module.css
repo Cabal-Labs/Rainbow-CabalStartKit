@@ -2,12 +2,34 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     margin: auto;
     
+}
+.connect {
+     margin-top: 20px;
+     margin-bottom: 50px;
+}
+.basic-info{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    top: 3px;
+    justify-content: space-evenly;
+    
+    
+}
+
+.basic-info div {
+    padding: 10px 10px;
+    margin: 10px;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    width: 550px;
+   
 }
 
 .field {
@@ -37,4 +59,34 @@
 }
 .outlinelightbtn:active{
     background-color: rgba(255, 255, 255, 0.4);
+}
+
+.input{
+    width: 300px;
+    height: 50px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 4px 4px;
+    margin: 10px;
+    outline: none;
+    border-color: white;
+    border-radius: 8px;
+}
+
+.input:focus{
+    border-color: rgba(255, 255, 255, 1);
+    border-width: 2px;
+    border-style: solid;
+}
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+}
+
+.error{
+    color: whitesmoke;
+    font-size: 17px;
+    margin: 20px;
+    padding: 0px;
 }

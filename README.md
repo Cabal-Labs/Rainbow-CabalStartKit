@@ -40,7 +40,7 @@ npm run dev
 
 The repo includes a couple of buttons that demonstrate how to set up both Rainbow kit and Wagmi in a Next.js project. You can use these buttons as a starting point for your own implementation.
 
-## Rainbow Kit
+### Rainbow Kit
 Set up Rainbow kit in your own project
 
 1. Install the following packages:

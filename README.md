@@ -14,7 +14,8 @@ Before you start, make sure you have the following tools installed:
 - Node.js
 - npm
 
-Make sure that you also have a [Alchemmy](https://www.alchemy.com/) API key.
+You'll also need an Alchemmy API key. [Alchemy](https://www.alchemy.com/) API key.
+
 
 ### Installation
 
@@ -28,7 +29,8 @@ git clone https://github.com/Cabal-Labs/rainbow-cabalkit.git
 ```
 npm install
 ```
-3. Start the development server:
+3. Go to [_app.js](https://github.com/Cabal-Labs/rainbow-cabalkit/blob/main/pages/_app.js) & insert your [Alchemy](https://www.alchemy.com/) key
+4. Start the development server:
 
 ```
 npm run dev

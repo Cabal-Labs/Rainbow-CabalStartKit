@@ -1,13 +1,12 @@
 import React from "react";
-import styles from "../../styles/navbar.module.css"
 
 export default function Navbar() {
   return (
-    <nav className={styles["navbar"]}>
-      <img onClick={ () => { window.open("https://caballabs.com/", "_blank")}} className={styles["logo"]} src="logo192.png" alt="logo" />
-      <div className={styles["links"]}>
-        <div onClick={ () => { window.open("https://discord.gg/Jv9Za474", "_blank")}} className={styles['outlinelightbtn']}>
-          <span className={styles['text13']}>
+    <nav className="relative text-white flex justify-between items-center left-0 h-20 w-full p-8 bg-nav-color">
+      <img onClick={ () => { window.open("https://caballabs.com/", "_blank")}} className="w-16 h-16 cursor-pointer" src="logo192.png" alt="logo" />
+      <div className="flex space-between items-center">
+        <div onClick={ () => { window.open("https://discord.gg/Jv9Za474", "_blank")}} className=" hover:bg-b-color-hover active:bg-b-color-active flex p-4 relative items-start flex-shrink-0 border-solid border-2 cursor-pointer border-white rounded-lg w-fit ">
+          <span>
             <span>Join The Cabal</span>
           </span>
         </div>
